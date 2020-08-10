@@ -12,13 +12,13 @@ export class ListComponent implements OnInit {
 
   users: User[] = [];
 
-  constructor(private readonly userService: UserService) { }
+  constructor() { }
 
   ngOnInit(): void {
-    this.userService.getUsers()
-    .subscribe(users => {
-      this.users = users;
-    })
+    // this.userService.getUsers()
+    // .subscribe(users => {
+    //   this.users = users;
+    // })
   }
 
 }
