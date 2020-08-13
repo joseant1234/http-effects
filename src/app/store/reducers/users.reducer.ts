@@ -9,14 +9,14 @@ export interface UsersState {
   error: any;
 }
 
-export const userInitialState: UsersState = {
+export const usersInitialState: UsersState = {
   users: [],
   loaded: false,
   loading: false,
   error: null,
 }
 
-const _usersReducer = createReducer(userInitialState,
+const _usersReducer = createReducer(usersInitialState,
   on(loadUsers, state => ({...state, loading: true })),
   on(loadUsersSuccess, (state, { users }) => ({
     ...state,
