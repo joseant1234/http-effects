@@ -14,6 +14,8 @@ import { loadUsers } from '../../store/actions/users.actions';
 export class ListComponent implements OnInit {
 
   users: User[] = [];
+  loading = false;
+  error: any;
 
   constructor(
     private readonly store: Store<AppState>
@@ -24,8 +26,10 @@ export class ListComponent implements OnInit {
     // .subscribe(users => {
     //   this.users = users;
     // })
-    this.store.select('users').subscribe(({ users }) => {
+    this.store.select('users').subscribe(({ users, loading, error }) => {
       this.users = users;
+      this.loading = loading;
+      this.error = error;
     });
     this.store.dispatch(loadUsers());
   }
