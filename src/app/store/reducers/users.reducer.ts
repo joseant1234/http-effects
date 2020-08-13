@@ -28,7 +28,11 @@ const _usersReducer = createReducer(userInitialState,
     ...state,
     loading: false,
     loaded: false,
-    error: payload,
+    error: {
+      url: payload.url,
+      name: payload.name,
+      message: payload.message,
+    },
   })),
 )
 
